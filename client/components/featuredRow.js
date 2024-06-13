@@ -21,7 +21,7 @@ export default function FeatureRow({id, title, description, resturants}) {
   return (
     <View>
       <View className="flex-row justify-between items-center px-4">
-        <View>
+        <View> 
           <Text className="font-bold text-lg">{title}</Text>
           <Text className="text-gray-500 text-xs">
             {description}

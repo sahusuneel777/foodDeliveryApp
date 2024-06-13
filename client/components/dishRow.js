@@ -19,7 +19,7 @@ export default function DishRow({name, description, id, price, image}) {
   return (
     <>
             <View style={{
-      shadowColor: '#000',
+      shadowColor: '#000', 
       }} className="flex-row items-center bg-slate-50 p-3 rounded-3xl shadow-slate-100 shadow-md mb-3 mx-2">
                 <Image className="rounded-3xl" style={{height: 80, width: 80}} source={{
                     uri: urlFor(image).url()

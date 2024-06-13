@@ -111,7 +111,7 @@ export default function BasketScreen() {
                     }}
 
                 >
-                    {
+                    { 
                         Object.entries(groupedItems).map(([key, items]) => {
                             return (
                                 <View style={{

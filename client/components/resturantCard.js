@@ -42,7 +42,7 @@ export default function ResturantCard({
       <View style={{shadowColor: themeColors.bgColor(0.2), shadowOffset: { width: 0, height: 6 },
       shadowColor: '#000',
       shadowOpacity: 0.35, elevation: 2, shadowRadius: 7}} className="mr-6 bg-white rounded-3xl shadow-lg">
-          <Image  className="h-36 w-60 rounded-t-3xl" source={{ uri: urlFor(imgUrl).url()}} />
+          <Image className="h-36 w-60 rounded-t-3xl" source={{ uri: urlFor(imgUrl).url()}} />
         
         <View className="px-3 pb-4 space-y-2">
          
