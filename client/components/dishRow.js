@@ -18,8 +18,10 @@ export default function DishRow({name, description, id, price, image}) {
     }
   return (
     <>
-            <View className="flex-row items-center bg-white p-3 rounded-3xl shadow-2xl mb-3 mx-2">
-                <Image className="rounded-3xl" style={{height: 100, width: 100}} source={{
+            <View style={{
+      shadowColor: '#000',
+      }} className="flex-row items-center bg-slate-50 p-3 rounded-3xl shadow-slate-100 shadow-md mb-3 mx-2">
+                <Image className="rounded-3xl" style={{height: 80, width: 80}} source={{
                     uri: urlFor(image).url()
                 }}/>
                 <View className="flex flex-1 space-y-3">
@@ -29,7 +31,7 @@ export default function DishRow({name, description, id, price, image}) {
                     </View>
                     <View className="flex-row pl-3 justify-between items-center">
                         <Text className="text-gray-700 text-lg font-bold">
-                            ${price}
+                        ₹{price}
                         </Text>
                         <View className="flex-row items-center">
                             <TouchableOpacity 

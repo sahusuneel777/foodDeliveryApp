@@ -40,6 +40,7 @@ export default function FeatureRow({id, title, description, resturants}) {
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{
             paddingHorizontal:15,
+            paddingBottom:5
         }}
         className="overflow-visible py-5"
        >

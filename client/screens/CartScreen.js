@@ -20,7 +20,7 @@ export default function BasketScreen() {
 
     const dispatch = useDispatch();
     const navigation = useNavigation();
-    const deliveryFee = 2;
+    const deliveryFee = 20;
 
     async function playSound() {
         console.log('Loading Sound');
@@ -83,10 +83,16 @@ export default function BasketScreen() {
             </View>
 
             {/* delivery time */}
-            {basketTotal == 0 ? <View style={{ height: hp('50%'), display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+            {basketTotal == 0 ? <View style={{ height: hp('80%'), display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
                 <Image source={require('../assets/images/addToCart.png')} className="ph-6 h-40 w-40" />
                 <Text className="font-extrabold text-gray text-lg">Your Cart Is Empty</Text>
                 <Text className="text-gray-700">Looks like you haven't added anything to your cart yet.</Text>
+                <TouchableOpacity
+                            style={{ backgroundColor: themeColors.bgColor(1) }}
+                            onPress={() => navigation.navigate('Home')}
+                            className="p-2 m-5 rounded-full">
+                            <Text className="text-white text-center font-bold text-lg">Browse Resturants</Text>
+                        </TouchableOpacity>
             </View> : <>
                 <View style={{ backgroundColor: themeColors.bgColor(0.2) }} className="flex-row px-4 items-center">
                     <Image source={require('../assets/images/bikeGuy.png')} className="w-20 h-20 rounded-full" />
@@ -108,7 +114,9 @@ export default function BasketScreen() {
                     {
                         Object.entries(groupedItems).map(([key, items]) => {
                             return (
-                                <View key={key}
+                                <View style={{
+                                    shadowColor: '#64748B',
+                                    }} key={key}
                                     className="flex-row items-center space-x-3 py-2 px-4 bg-white rounded-3xl mx-2 mb-3 shadow-md">
                                     <Text style={{ color: themeColors.text }} className="font-bold">{items.length} x </Text>
                                     <Image className="h-14 w-14 rounded-full" source={{ uri: urlFor(items[0]?.image).url() }} />
@@ -119,7 +127,7 @@ export default function BasketScreen() {
                                         onPress={() => dispatch(removeFromBasket({ id: items[0]?.id }))}>
                                         <Icon.Minus strokeWidth={2} height={20} width={20} stroke="white" />
                                     </TouchableOpacity>
-                                    <Text className="font-semibold text-base">${items[0]?.price}</Text>
+                                    <Text className="font-semibold text-base">₹{items[0]?.price}</Text>
                                     <TouchableOpacity
                                         className="p-1 rounded-full"
                                         style={{ backgroundColor: themeColors.bgColor(1) }}
@@ -135,15 +143,15 @@ export default function BasketScreen() {
                 <View style={{ backgroundColor: themeColors.bgColor(0.2) }} className=" p-6 px-8 rounded-t-3xl space-y-4">
                     <View className="flex-row justify-between">
                         <Text className="text-gray-700">Subtotal</Text>
-                        <Text className="text-gray-700">${basketTotal}</Text>
+                        <Text className="text-gray-700">₹{basketTotal}</Text>
                     </View>
                     <View className="flex-row justify-between">
                         <Text className="text-gray-700">Delivery Fee</Text>
-                        <Text className="text-gray-700">${deliveryFee}</Text>
+                        <Text className="text-gray-700">₹{deliveryFee}</Text>
                     </View>
                     <View className="flex-row justify-between">
                         <Text className="font-extrabold">Order Total</Text>
-                        <Text className="font-extrabold">${basketTotal + deliveryFee}</Text>
+                        <Text className="font-extrabold">₹{basketTotal + deliveryFee}</Text>
                     </View>
                     <View>
                         <TouchableOpacity
