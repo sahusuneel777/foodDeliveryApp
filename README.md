@@ -20,7 +20,7 @@ Introducing "QuickBite".  Satisfy your cravings in just a few taps with QuickBit
   informed every step of the way.
 
 
-**Technical Excellence:**
+**Tech side:**
 
   **Redux:** Experience lightning-fast performance and smooth navigation with our app's powerful state management using Redux.
 
@@ -28,6 +28,6 @@ Introducing "QuickBite".  Satisfy your cravings in just a few taps with QuickBit
 
   **React Native:** Enjoy a superior user experience with our app built on React Native, offering cross-platform compatibility and native-like performance.
 
-  **Expo:** Our use of Expo guarantees a streamlined, hassle-free user experience with frequent updates and enhancements.
+  **Expo:** Use of Expo to have vast range of library support.
 
   **Sanity for Backend Services:** Reliable, efficient, and robust backend services powered by Sanity ensure your data is always safe and your app runs flawlessly.
